@@ -1,0 +1,6 @@
+{"name":"Ewa","lat":51.13472472871219,"lng":17.041056757478245,"movingAngle":0,"distance":0,"_id":"AgAYJzHSnGqpYDXq"}
+{"name":"Bartek","lat":51.422902427224706,"lng":17.06270172733566,"movingAngle":4,"distance":0,"_id":"ZNh0wdxlpmPnl7rR"}
+{"name":"new hero","lat":51.24419371671514,"lng":17.049437189595185,"movingAngle":21,"distance":0,"_id":"d7rqfRtDgtJ74H9k"}
+{"name":"Emila","lat":51.42030679901424,"lng":17.063980345066597,"movingAngle":96,"distance":0,"_id":"vjkzESjFIPpKvH0P"}
+{"name":"ilona","lat":51.19307432074493,"lng":17.046558710700392,"movingAngle":188,"distance":0,"_id":"vlRynclVig0wqdkT"}
+{"name":"new user walking","lat":51.108,"lng":17.039,"movingAngle":275,"distance":0,"_id":"wdsYj4AylHfwgCKc"}

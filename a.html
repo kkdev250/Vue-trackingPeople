@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ws</title>
+	<script>
+	  const ws = new window.WebSocket('ws://localhost:3004');
+	  //const ws = new WebSocket('ws://localhost:3004');
+	  ws.onopen = function(evt) { 
+		console.log(evt);
+		};
+	  ws.onmessage = function(evt) { console.log(evt) };
+	  ws.onclose = function(evt) { console.log('close!') };
+	  ws.onerror = function(evt) { console.log('error') };
+	</script>
+  </head>
+  <body>
+  </body>
+</html>

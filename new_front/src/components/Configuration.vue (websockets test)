@@ -1,0 +1,80 @@
+<template>
+  <div class="wrapper">
+    <h1>websockets test</h1>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <input type="text" class="form-control" placeholder="type message here..." v-model="message" @keydown.enter="send">
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" @click="connect">Connect</button>
+        <button class="btn btn-warning" @click="disconnect">Disonnect</button>
+        <div>Status: {{status}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        Messages from server:
+        <ul class="list-group">
+          <li v-for="(msg,ix) in messages" :key="ix" class="list-group-item" :class="{'gray': ix %2 ==0}">{{msg}}</li>
+        </ul>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+
+  </div>
+</template>
+
+<script>
+    export default {
+      name: 'Configuration',
+      data() {
+        return {
+          status: '?',
+          message: '',
+          messages: []
+        }
+      },
+      methods: {
+        connect() {
+          this.$connect();
+        },
+        disconnect() {
+          this.$disconnect();
+        },
+        send() {
+          this.$socket.send(this.message);
+          this.message='';
+        }
+      },
+      mounted() {
+        this.$options.sockets.onopen = () => {
+          this.status='connected'
+        },
+        this.$options.sockets.onclose = () => {
+          this.status='disconnected'
+        }
+        this.$options.sockets.onmessage = (msg) => {
+          this.messages.push(msg.data);
+        }
+      }
+    }
+</script>
+
+<style scoped>
+  .wrapper {
+    border: 2px solid black;
+    margin: 10px;
+    height: 600px;
+  }
+  .row {
+    padding: 5px 0;
+  }
+  .gray {
+    background-color: lightblue;
+  }
+</style>
